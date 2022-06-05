@@ -10,7 +10,6 @@ class App extends React.Component {
     this.state = {
       currentScore: 0,
       increment: 1,
-      playerHasWon: false,
       winningScore: 100
     }
   }
@@ -45,16 +44,14 @@ class App extends React.Component {
     if (this.state.currentScore >= this.state.winningScore) {
       return (
         <center>
-        <ScoreBoard currentScore={this.state.currentScore}/>
-        <h2>You Win!</h2>
-        <button onClick={this.handlePlayAgain}>Play again?</button>
-        
+          <ScoreBoard currentScore={this.state.currentScore}/>
+          <h2>You Win!</h2>
+          <button onClick={this.handlePlayAgain}>Play again?</button> 
         </center>
       )
     } 
     return (
-      <center>
-             
+      <center>             
         <ScoreBoard currentScore={this.state.currentScore}/>
         <GameControls 
           increment={this.state.increment}
@@ -72,6 +69,7 @@ export default App;
 
 
 /**
+ research:
  https://stackoverflow.com/questions/55028583/how-do-i-call-setstate-from-another-component-in-reactjs#:~:text=You%20can't%20directly%20call,the%20child%20that%20contains%20setState%20.
 
  https://reactjs.org/docs/conditional-rendering.html
